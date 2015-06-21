@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="tapoit_hr_project_workcontext_form_view" model="ir.ui.view">
+            <field name="name">Work Context Form View</field>
+            <field name="model">tapoit.hr.project.workcontext</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="TaPo-IT Workcontext">
+                    <field name="sequence" />
+                    <field name="status" />
+                    <field name="name" />
+                    <field name="keyword" />
+                    <field name="company" />
+                    <newline />
+                    <field name="action_reason" />
+                </form>
+            </field>
+        </record>
+        <record id="tapoit_hr_project_workcontext_tree_view" model="ir.ui.view">
+            <field name="name">Work Context Tree View</field>
+            <field name="model">tapoit.hr.project.workcontext</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="TaPo-IT Workcontext">
+                    <field name="name" />
+                    <field name="keyword" />
+                    <field name="status" />
+                    <field name="company" />
+                    <field name="sequence" />
+                    <field name="action_reason" />
+                </tree>
+            </field>
+        </record>
+        <record id="hr_project_timesheet_form" model="ir.ui.view">
+            <field name="name">hr.timesheet.sheet.add.action.reason</field>
+            <field name="model">hr_timesheet_sheet.sheet</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="hr_timesheet_sheet.hr_timesheet_sheet_form"/>
+            <field name="arch" type="xml">
+<data>
+    <xpath expr="//tree[@string='Attendances']/field[@name='name']" position="after">
+        <field name="action_desc" />
+    </xpath>
+</data>
+            </field>
+        </record>
+        <record id="hr_project_task_work_search" model="ir.ui.view">
+            <field name="name">Project Task Work Search</field>
+            <field name="model">project.task.work</field>
+            <field name="arch" type="xml">
+                <search string="Project Task Work">
+                    <field name="task_id" string="Task"/>
+                    <field name="project_id" string="Project"/>
+                    <field name="year" string="Year" />
+                    <field name="date" string="Month" />
+                    <field name="user_id" string="User" />
+                    <group expand="1" string="Filter" colspan="4" col="20">
+                        <filter icon="terp-stock_align_left_24" string="My work" domain="[('user_id', '=', uid)]"/>
+                    </group>
+                    <newline />
+                    <group expand="0" string="Group By..." colspan="10" col="12">
+                        <filter string="Task" icon="terp-stock_align_left_24" context="{'group_by': 'task_id'}"/>
+                        <filter string="Project" icon="terp-stock_align_left_24" context="{'group_by': 'project_id'}"/>
+                        <separator orientation="vertical"/>
+                        <filter string="Year" icon="terp-go-year" domain="[]" context="{'group_by':'year'}"/>
+                        <filter string="Month" icon="terp-go-month" domain="[]" context="{'group_by':'date'}"/>
+                        <filter string="Day" icon="terp-go-today" domain="[]" context="{'group_by':'day'}"/>
+                        <separator orientation="vertical"/>
+                        <filter string="User" icon="terp-personal" context="{'group_by': 'user_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record id="hr_project_task_work_form_view" model="ir.ui.view">
+            <field name="name">Project Task Work Form View</field>
+            <field name="model">project.task.work</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Task Work" version="7.0">
+                     <sheet>
+                        <h1><field name="name" placeholder="Arbeitsbeschreibung"></field></h1>
+                        <group>
+                            <group>
+                                <field name="date"></field>
+                                <field name="hours" widget="float_time" sum="Stundenleistung"></field>
+                                <field name="user_id"></field>
+                                <field name="day" invisible="1"></field>
+                                <field name="year" invisible="1"></field>
+                            </group>
+                            <group>
+                                <field name="task_id"></field>
+                                <field name="project_id"></field>
+                                <field name="workcontext"> </field>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="project_ids"></field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="hr_project_task_work_tree_view" model="ir.ui.view">
+            <field name="name">Project Task Work Tree View</field>
+            <field name="model">project.task.work</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Task Work">
+                    <field name="date"></field>
+                    <field name="task_id"></field>
+                    <field name="name"></field>
+                    <field name="hours" widget="float_time" sum="Stundenleistung"></field>
+                    <field name="workcontext"> </field>
+                    <field name="user_id"></field>
+                    <field name="day" invisible="1"></field>
+                    <field name="year" invisible="1"></field>
+                </tree>
+            </field>
+        </record>
+        <!-- Bring back deprecated notes -->
+        <record id="view_task_form_notes" model="ir.ui.view">
+            <field name="name">project.task.notes.form</field>
+            <field name="model">project.task</field>  
+            <field name="type">form</field>
+            <field name="inherit_id" ref="project.view_task_form2" />
+            <field name="arch" type="xml">   
+                <xpath expr="//page[@string='Extra Info']" position="inside">
+                    <field name="notes" />
+                </xpath>
+            </field>
+        </record>
+        <record id="view_task_tree" model="ir.ui.view">
+            <field name="name">Project Task Tree (TaPo-IT</field>
+            <field name="model">project.task</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="project.view_task_tree2" />
+            <field name="arch" type="xml">
+                <field name="effective_hours" position="replace">
+                    <field name="effective_hours" widget="float_time" sum="Spent Hours" />
+                </field>
+            </field>
+        </record>
+        <record id="action_hr_project_workcontext" model="ir.actions.act_window">
+            <field name="name">Work Context</field>
+            <field name="res_model">tapoit.hr.project.workcontext</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="tapoit_hr_project_workcontext_tree_view"/>
+        </record>
+        <record id="action_hr_project_task_work" model="ir.actions.act_window">
+            <field name="name">Works</field>
+            <field name="res_model">project.task.work</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="hr_project_task_work_tree_view"/>
+            <field name="search_view_id" ref="hr_project_task_work_search"/>
+        </record>
+        <menuitem action="action_hr_project_workcontext"
+                    id="menu_hr_project_workcontext"
+                    parent="hr.menu_hr_configuration"
+                    sequence="20" />
+        <menuitem action="action_hr_project_task_work"
+                    id="menu_hr_project_task_work"
+                    parent="project.menu_project_management"
+                    sequence="30" />
+
+    </data>
+</openerp>

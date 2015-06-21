@@ -1,0 +1,194 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record id="tapoit_worktrail_sync_conf_form_view" model="ir.ui.view">
+            <field name="name">tapoit_worktrail_server_conf.form</field>
+            <field name="model">tapoit_worktrail.server.conf</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="TaPo-IT Server Configuration" version="7.0">
+                    <header>
+                        <button type="object" name="sync_messages_hubstream" class="oe_highlight" attrs="{ 'invisible': ['|', ('type', '!=', 'hubstream-personal'), ('access_granted', '!=', 'active')]}" string="Sync all messages" />
+                        <button type="object" name="get_status" class="oe_highlight" string="Request state" />
+                        <button type="object" name="reset_app" string="Request a new authorization" confirm="Do you really want to initialize a new authorization?" />
+                        <field name="access_granted" readonly="True" widget="statusbar" statusbar_visible="pending,active,rejected" />
+                    </header>
+                    <sheet>
+                        <h1><field name="name" /></h1>
+                        <field name="active" class="oe_inline" /><label for="active" />
+                        <group>
+                            <group string="Remote Server">
+                                <field name="host" />
+                                <field name="secure" />
+                                <field name="port" />
+                            </group>
+                            <group string="Local Server">
+                                <field name="dbname" />
+                                <field name="type" />
+                                <field name="mode" />
+                                <field name="debug" />
+                            </group>
+                        </group>
+                        <group>
+                            <group string="Authentication" colspan="4">
+                                <field name="app_key" />
+                                <field name="secret_api_key" />
+                                <field name="redirect_url" widget="url" readonly="1" placeholder="URL for grant/revoke access in your WorkTrail Instance" />
+                                <field name="request_key" invisible="1" />
+                                <field name="auth_token" invisible="1" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="tapoit_worktrail_sync_conf_tree_view" model="ir.ui.view">
+            <field name="name">tapoit_worktrail_server_conf.tree</field>
+            <field name="model">tapoit_worktrail.server.conf</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="TaPo-IT Server Configuration">
+                    <field name="name" />
+                    <field name="host" />
+                    <field name="port" />
+                    <field name="secure" />
+                    <field name="dbname" />
+                    <field name="debug" />
+                    <field name="mode" />
+                </tree>
+            </field>
+        </record>
+        <record id="tapoit_worktrail_sync_form_view" model="ir.ui.view">
+            <field name="name">tapoit_worktrail_server_conf.form</field>
+            <field name="model">tapoit_worktrail.server.sync</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Worktrail Sync History" version="7.0">
+                    <header>
+                        <field name="state" readonly="True" widget="statusbar" statusbar_visible="running,error,done" />
+                        <div class="oe_clear" />
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="sync_conf" />
+                            </group>
+                            <group>
+                                <field name="sync_time" />
+                                <field name="duration" readonly="True" />
+                            </group>
+                        </group>
+                        <group>
+                            <field name="resources" colspan="4" />
+                            <field name="log" colspan="4" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="tapoit_worktrail_sync_tree_view" model="ir.ui.view">
+            <field name="name">tapoit_worktrail_server_conf.tree</field>
+            <field name="model">tapoit_worktrail.server.sync</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Worktrail Sync History">
+                    <field name="sync_conf" />
+                    <field name="sync_time" />
+                    <field name="state" readonly="True" />
+                    <field name="duration" />
+                    <field name="resources" />
+                </tree>
+            </field>
+        </record>
+        <record id="tapoit_worktrail_resource_form_view" model="ir.ui.view">
+            <field name="name">tapoit_worktrail_resource.form</field>
+            <field name="model">tapoit_worktrail.server.resource</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Worktrail Resource" version="7.0">
+                    <header></header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="sync_conf" />
+                                <field name="sync_remote_modified" />
+                                <field name="sync_openerp_modified" />
+                            </group>
+                            <group>
+                                <field name="external_id" />
+                                <field name="type" on_change="onchange_resource_type(type)" />
+                                <field name="sync" />
+                            </group>
+                        </group>
+                        <group string="Linked OpenERP Resource">
+                            <field name="employee" attrs="{'invisible':[('type','!=','employee')], 'required': [('type','==','employee')] }" />
+                            <field name="project" attrs="{'invisible':[('type','!=','project')], 'required': [('type','==','project')] }" />
+                            <field name="task" attrs="{'invisible':[('type','!=','task')], 'required': [('type','==','task')] }" />
+                            <field name="work" attrs="{'invisible':[('type','!=','work')], 'required': [('type','==','work')] }" />
+                            <field name="workcontext" attrs="{'invisible':[('type','!=','workcontext')], 'required': [('type','==','workcontext')] }" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="tapoit_worktrail_resource_tree_view" model="ir.ui.view">
+            <field name="name">tapoit_worktrail_resource.tree</field>
+            <field name="model">tapoit_worktrail.server.resource</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Worktrail Resource">
+                    <field name="sync_conf" />
+                    <field name="type" />
+                    <field name="external_id" />
+                    <field name="sync" />
+                    <field name="sync_remote_modified" />
+                    <field name="sync_openerp_modified" />
+                    <field name="employee" />
+                    <field name="project" />
+                    <field name="task" />
+                    <field name="work" />
+                    <field name="workcontext" />
+                    
+                    
+                </tree>
+            </field>
+        </record>
+        <record id="action_tapoit_worktrail_sync_conf" model="ir.actions.act_window">
+            <field name="name">Worktrail Sync Configuration</field>
+            <field name="res_model">tapoit_worktrail.server.conf</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="action_tapoit_worktrail_sync" model="ir.actions.act_window">
+            <field name="name">Worktrail Sync History</field>
+            <field name="res_model">tapoit_worktrail.server.sync</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="action_tapoit_worktrail_resource" model="ir.actions.act_window">
+            <field name="name">Worktrail Sync Mapping</field>
+            <field name="res_model">tapoit_worktrail.server.resource</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem name="Worktrail" parent="base.menu_administration" id="menu_worktrail" />
+        <menuitem
+            name="Worktrail Sync Configuration"
+            sequence="10"
+            parent="menu_worktrail"
+            action="action_tapoit_worktrail_sync_conf"
+            id="menu_tapoit_worktrail_sync_conf" />
+        <menuitem
+            name="Worktrail Sync History"
+            sequence="20"
+            parent="menu_worktrail"
+            action="action_tapoit_worktrail_sync"
+            id="menu_tapoit_worktrail_sync" />
+        <menuitem
+            name="Worktrail Sync Mapping"
+            sequence="25"
+            parent="menu_worktrail"
+            action="action_tapoit_worktrail_resource"
+            id="menu_tapoit_worktrail_resource" />
+    </data>
+</openerp>

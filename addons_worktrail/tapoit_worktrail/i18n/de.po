@@ -1,0 +1,477 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* tapoit_worktrail
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-01-07 13:35+0000\n"
+"PO-Revision-Date: 2015-01-07 13:35+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: tapoit_worktrail
+#: code:addons\tapoit_worktrail\wizard\tapoit_worktrail_sync_execution.py:135
+#, python-format
+msgid "%s"
+msgstr "%s"
+
+#. module: tapoit_worktrail
+#: field:tapoit_worktrail.server.conf,api_key:0
+msgid "API Key"
+msgstr "API Key"
+
+#. module: tapoit_worktrail
+#: view:tapoit_worktrail.sync.execution:tapoit_worktrail.tapoit_worktrail_sync_now_form_view
+msgid "Abbrechen"
+msgstr "Abbrechen"
+
+#. module: tapoit_worktrail
+#: selection:tapoit_worktrail.server.conf,access_granted:0
+#: field:tapoit_worktrail.server.conf,active:0
+msgid "Active"
+msgstr "Active"
+
+#. module: tapoit_worktrail
+#: model:ir.model,name:tapoit_worktrail.model_account_analytic_line
+msgid "Analytic Line"
+msgstr "Analytische Buchung"
+
+#. module: tapoit_worktrail
+#: field:tapoit_worktrail.server.conf,app_key:0
+msgid "Application Key"
+msgstr "Application Key"
+
+#. module: tapoit_worktrail
+#: field:tapoit_worktrail.server.conf,auth_token:0
+msgid "Auth Token"
+msgstr "Auth Token"
+
+#. module: tapoit_worktrail
+#: view:tapoit_worktrail.server.conf:tapoit_worktrail.tapoit_worktrail_sync_conf_form_view
+msgid "Authentication"
+msgstr "Authentication"
+
+#. module: tapoit_worktrail
+#: selection:tapoit_worktrail.server.conf,type:0
+msgid "Company Hub Stream"
+msgstr "Company Hub Stream"
+
+#. module: tapoit_worktrail
+#: field:tapoit_worktrail.server.conf,create_uid:0
+#: field:tapoit_worktrail.server.resource,create_uid:0
+#: field:tapoit_worktrail.server.sync,create_uid:0
+#: field:tapoit_worktrail.server.task.type,create_uid:0
+#: field:tapoit_worktrail.sync.execution,create_uid:0
+msgid "Created by"
+msgstr "Created by"
+
+#. module: tapoit_worktrail
+#: field:tapoit_worktrail.server.conf,create_date:0
+#: field:tapoit_worktrail.server.resource,create_date:0
+#: field:tapoit_worktrail.server.sync,create_date:0
+#: field:tapoit_worktrail.server.task.type,create_date:0
+#: field:tapoit_worktrail.sync.execution,create_date:0
+msgid "Created on"
+msgstr "Created on"
+
+#. module: tapoit_worktrail
+#: field:tapoit_worktrail.server.conf,debug:0
+msgid "Debug Log"
+msgstr "Debug Log"
+
+#. module: tapoit_worktrail
+#: view:tapoit_worktrail.server.conf:tapoit_worktrail.tapoit_worktrail_sync_conf_form_view
+msgid "Do you really want to initialize a new authorization?"
+msgstr "Do you really want to initialize a new authorization?"
+
+#. module: tapoit_worktrail
+#: selection:tapoit_worktrail.server.sync,state:0
+msgid "Done"
+msgstr "Done"
+
+#. module: tapoit_worktrail
+#: field:tapoit_worktrail.server.sync,duration:0
+msgid "Duration"
+msgstr "Duration"
+
+#. module: tapoit_worktrail
+#: field:tapoit_worktrail.server.resource,employee:0
+msgid "Employee"
+msgstr "Employee"
+
+#. module: tapoit_worktrail
+#: sql_constraint:tapoit_worktrail.server.resource:0
+msgid "Employee/User must be unique!"
+msgstr "Employee/User must be unique!"
+
+#. module: tapoit_worktrail
+#: selection:tapoit_worktrail.server.sync,state:0
+msgid "Error"
+msgstr "Error"
+
+#. module: tapoit_worktrail
+#: code:addons\tapoit_worktrail\model\tapoit_worktrail.py:116
+#: code:addons\tapoit_worktrail\model\tapoit_worktrail_config.py:114
+#: code:addons\tapoit_worktrail\wizard\tapoit_worktrail_sync_execution.py:135
+#: code:addons\tapoit_worktrail\wizard\tapoit_worktrail_sync_execution.py:1392
+#: code:addons\tapoit_worktrail\wizard\tapoit_worktrail_sync_execution.py:1449
+#: code:addons\tapoit_worktrail\wizard\tapoit_worktrail_sync_execution.py:1473
+#, python-format
+msgid "Error !"
+msgstr "Error !"
+
+#. module: tapoit_worktrail
+#: selection:tapoit_worktrail.server.sync,state:0
+msgid "Failed"
+msgstr "Failed"
+
+#. module: tapoit_worktrail
+#: field:tapoit_worktrail.server.conf,redirect_url:0
+msgid "Grant/Revoke access for OpenERP"
+msgstr "Grant/Revoke access for OpenERP"
+
+#. module: tapoit_worktrail
+#: field:tapoit_worktrail.server.conf,id:0
+#: field:tapoit_worktrail.server.resource,id:0
+#: field:tapoit_worktrail.server.sync,id:0
+#: field:tapoit_worktrail.server.task.type,id:0
+#: field:tapoit_worktrail.sync.execution,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: tapoit_worktrail
+#: selection:tapoit_worktrail.server.conf,mode:0
+msgid "Incoming Mode"
+msgstr "Incoming Mode"
+
+#. module: tapoit_worktrail
+#: field:tapoit_worktrail.server.conf,write_uid:0
+#: field:tapoit_worktrail.server.resource,write_uid:0
+#: field:tapoit_worktrail.server.sync,write_uid:0
+#: field:tapoit_worktrail.server.task.type,write_uid:0
+#: field:tapoit_worktrail.sync.execution,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: tapoit_worktrail
+#: field:tapoit_worktrail.server.conf,write_date:0
+#: field:tapoit_worktrail.server.resource,write_date:0
+#: field:tapoit_worktrail.server.sync,write_date:0
+#: field:tapoit_worktrail.server.task.type,write_date:0
+#: field:tapoit_worktrail.sync.execution,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: tapoit_worktrail
+#: view:tapoit_worktrail.server.resource:tapoit_worktrail.tapoit_worktrail_resource_form_view
+msgid "Linked OpenERP Resource"
+msgstr "Linked OpenERP Resource"
+
+#. module: tapoit_worktrail
+#: field:tapoit_worktrail.server.conf,dbname:0
+msgid "Local Database Name"
+msgstr "Local Database Name"
+
+#. module: tapoit_worktrail
+#: view:tapoit_worktrail.server.conf:tapoit_worktrail.tapoit_worktrail_sync_conf_form_view
+msgid "Local Server"
+msgstr "Local Server"
+
+#. module: tapoit_worktrail
+#: field:tapoit_worktrail.server.sync,log:0
+msgid "Log"
+msgstr "Log"
+
+#. module: tapoit_worktrail
+#: field:tapoit_worktrail.server.conf,name:0
+msgid "Name"
+msgstr "Name"
+
+#. module: tapoit_worktrail
+#: field:tapoit_worktrail.server.resource,sync_openerp_modified:0
+msgid "OpenERP Modified"
+msgstr "OpenERP Modified"
+
+#. module: tapoit_worktrail
+#: selection:tapoit_worktrail.server.conf,mode:0
+msgid "Outgoing Mode"
+msgstr "Outgoing Mode"
+
+#. module: tapoit_worktrail
+#: selection:tapoit_worktrail.server.conf,access_granted:0
+msgid "Pending"
+msgstr "Pending"
+
+#. module: tapoit_worktrail
+#: selection:tapoit_worktrail.server.conf,type:0
+msgid "Personal Hub Stream"
+msgstr "Personal Hub Stream"
+
+#. module: tapoit_worktrail
+#: field:tapoit_worktrail.server.resource,project:0
+msgid "Project"
+msgstr "Project"
+
+#. module: tapoit_worktrail
+#: selection:tapoit_worktrail.server.conf,type:0
+msgid "Project/Task/Work Sync"
+msgstr "Project/Task/Work Sync"
+
+#. module: tapoit_worktrail
+#: field:tapoit_worktrail.server.conf,type:0
+msgid "Purpose"
+msgstr "Purpose"
+
+#. module: tapoit_worktrail
+#: selection:tapoit_worktrail.server.conf,access_granted:0
+msgid "Rejected"
+msgstr "Rejected"
+
+#. module: tapoit_worktrail
+#: field:tapoit_worktrail.server.conf,host:0
+msgid "Remote Host"
+msgstr "Remote Host"
+
+#. module: tapoit_worktrail
+#: field:tapoit_worktrail.server.conf,port:0
+msgid "Remote Port"
+msgstr "Remote Port"
+
+#. module: tapoit_worktrail
+#: view:tapoit_worktrail.server.conf:tapoit_worktrail.tapoit_worktrail_sync_conf_form_view
+msgid "Remote Server"
+msgstr "Remote Server"
+
+#. module: tapoit_worktrail
+#: field:tapoit_worktrail.server.conf,request_key:0
+msgid "Request Key"
+msgstr "Request Key"
+
+#. module: tapoit_worktrail
+#: view:tapoit_worktrail.server.conf:tapoit_worktrail.tapoit_worktrail_sync_conf_form_view
+msgid "Request a new authorization"
+msgstr "Request a new authorization"
+
+#. module: tapoit_worktrail
+#: view:tapoit_worktrail.server.conf:tapoit_worktrail.tapoit_worktrail_sync_conf_form_view
+msgid "Request state"
+msgstr "Request state"
+
+#. module: tapoit_worktrail
+#: field:tapoit_worktrail.server.resource,type:0
+msgid "Resource Type"
+msgstr "Resource Type"
+
+#. module: tapoit_worktrail
+#: field:tapoit_worktrail.server.sync,resources:0
+msgid "Resources affected"
+msgstr "Resources affected"
+
+#. module: tapoit_worktrail
+#: selection:tapoit_worktrail.server.sync,state:0
+msgid "Running"
+msgstr "Running"
+
+#. module: tapoit_worktrail
+#: field:tapoit_worktrail.server.conf,secure:0
+msgid "SSL/TLS"
+msgstr "SSL/TLS"
+
+#. module: tapoit_worktrail
+#: field:tapoit_worktrail.server.conf,secret_api_key:0
+msgid "Secret API Key"
+msgstr "Secret API Key"
+
+#. module: tapoit_worktrail
+#: field:tapoit_worktrail.server.conf,access_granted:0
+#: field:tapoit_worktrail.server.sync,state:0
+msgid "State"
+msgstr "State"
+
+#. module: tapoit_worktrail
+#: field:tapoit_worktrail.server.resource,sync:0
+msgid "Sync"
+msgstr "Sync"
+
+#. module: tapoit_worktrail
+#: field:tapoit_worktrail.server.conf,mode:0
+msgid "Sync Mode"
+msgstr "Sync Mode"
+
+#. module: tapoit_worktrail
+#: field:tapoit_worktrail.server.resource,sync_conf:0
+#: field:tapoit_worktrail.server.sync,sync_conf:0
+msgid "Sync Server"
+msgstr "Sync Server"
+
+#. module: tapoit_worktrail
+#: field:tapoit_worktrail.server.sync,sync_time:0
+msgid "Sync Time"
+msgstr "Sync Time"
+
+#. module: tapoit_worktrail
+#: view:tapoit_worktrail.server.conf:tapoit_worktrail.tapoit_worktrail_sync_conf_form_view
+msgid "Sync all messages"
+msgstr "Sync all messages"
+
+#. module: tapoit_worktrail
+#: view:tapoit_worktrail.sync.execution:tapoit_worktrail.tapoit_worktrail_sync_now_form_view
+msgid "Sync ausführen"
+msgstr "Sync ausführen"
+
+#. module: tapoit_worktrail
+#: code:addons\tapoit_worktrail\wizard\tapoit_worktrail_sync_execution.py:1392
+#, python-format
+msgid "Sync(%s) is not active!"
+msgstr "Sync(%s) is not active!"
+
+#. module: tapoit_worktrail
+#: view:tapoit_worktrail.server.conf:tapoit_worktrail.tapoit_worktrail_sync_conf_form_view
+#: view:tapoit_worktrail.server.conf:tapoit_worktrail.tapoit_worktrail_sync_conf_tree_view
+msgid "TaPo-IT Server Configuration"
+msgstr "TaPo-IT Server Configuration"
+
+#. module: tapoit_worktrail
+#: field:tapoit_worktrail.server.resource,task:0
+#: field:tapoit_worktrail.server.task.type,task:0
+msgid "Task"
+msgstr "Task"
+
+#. module: tapoit_worktrail
+#: field:tapoit_worktrail.server.task.type,type:0
+msgid "Task Type"
+msgstr "Task Type"
+
+#. module: tapoit_worktrail
+#: field:tapoit_worktrail.server.resource,work:0
+msgid "Task Work"
+msgstr "Task Work"
+
+#. module: tapoit_worktrail
+#: help:tapoit_worktrail.server.conf,dbname:0
+msgid "This will constraint the sync to a certain database which does protect data integrity"
+msgstr "This will constraint the sync to a certain database which does protect data integrity"
+
+#. module: tapoit_worktrail
+#: model:ir.model,name:tapoit_worktrail.model_hr_analytic_timesheet
+msgid "Timesheet Line"
+msgstr "Zeiterfassungsposition"
+
+#. module: tapoit_worktrail
+#: selection:tapoit_worktrail.server.conf,mode:0
+msgid "Two-Way Mode"
+msgstr "Two-Way Mode"
+
+#. module: tapoit_worktrail
+#: code:addons\tapoit_worktrail\model\tapoit_worktrail.py:116
+#: code:addons\tapoit_worktrail\model\tapoit_worktrail_config.py:114
+#, python-format
+msgid "Type(%s) not possible!"
+msgstr "Type(%s) not possible!"
+
+#. module: tapoit_worktrail
+#: view:tapoit_worktrail.server.conf:tapoit_worktrail.tapoit_worktrail_sync_conf_form_view
+msgid "URL for grant/revoke access in your WorkTrail Instance"
+msgstr "URL for grant/revoke access in your WorkTrail Instance"
+
+#. module: tapoit_worktrail
+#: field:tapoit_worktrail.server.resource,workcontext:0
+msgid "Work Context"
+msgstr "Work Context"
+
+#. module: tapoit_worktrail
+#: model:ir.ui.menu,name:tapoit_worktrail.menu_worktrail
+msgid "Worktrail"
+msgstr "Worktrail"
+
+#. module: tapoit_worktrail
+#: field:tapoit_worktrail.server.resource,external_id:0
+msgid "Worktrail ID"
+msgstr "Worktrail ID"
+
+#. module: tapoit_worktrail
+#: field:tapoit_worktrail.server.resource,sync_remote_modified:0
+msgid "Worktrail Modified"
+msgstr "Worktrail Modified"
+
+#. module: tapoit_worktrail
+#: view:tapoit_worktrail.server.resource:tapoit_worktrail.tapoit_worktrail_resource_form_view
+#: view:tapoit_worktrail.server.resource:tapoit_worktrail.tapoit_worktrail_resource_tree_view
+msgid "Worktrail Resource"
+msgstr "Worktrail Resource"
+
+#. module: tapoit_worktrail
+#: model:ir.model,name:tapoit_worktrail.model_tapoit_worktrail_server_resource
+msgid "Worktrail Resource Mapping"
+msgstr "Worktrail Resource Mapping"
+
+#. module: tapoit_worktrail
+#: model:ir.model,name:tapoit_worktrail.model_tapoit_worktrail_server_conf
+msgid "Worktrail Server Configuration"
+msgstr "Worktrail Server Configuration"
+
+#. module: tapoit_worktrail
+#: model:ir.model,name:tapoit_worktrail.model_tapoit_worktrail_server_sync
+msgid "Worktrail Server Sync"
+msgstr "Worktrail Server Sync"
+
+#. module: tapoit_worktrail
+#: model:ir.actions.act_window,name:tapoit_worktrail.action_tapoit_worktrail_sync_now
+#: view:tapoit_worktrail.sync.execution:tapoit_worktrail.tapoit_worktrail_sync_now_form_view
+msgid "Worktrail Sync"
+msgstr "Worktrail Sync"
+
+#. module: tapoit_worktrail
+#: model:ir.actions.act_window,name:tapoit_worktrail.action_tapoit_worktrail_sync_conf
+#: model:ir.ui.menu,name:tapoit_worktrail.menu_tapoit_worktrail_sync_conf
+msgid "Worktrail Sync Configuration"
+msgstr "Worktrail Sync Configuration"
+
+#. module: tapoit_worktrail
+#: model:ir.model,name:tapoit_worktrail.model_tapoit_worktrail_sync_execution
+#: model:ir.ui.menu,name:tapoit_worktrail.menu_tapoit_worktrail_sync_now
+msgid "Worktrail Sync Execution"
+msgstr "Worktrail Sync Execution"
+
+#. module: tapoit_worktrail
+#: model:ir.actions.act_window,name:tapoit_worktrail.action_tapoit_worktrail_sync
+#: model:ir.ui.menu,name:tapoit_worktrail.menu_tapoit_worktrail_sync
+#: view:tapoit_worktrail.server.sync:tapoit_worktrail.tapoit_worktrail_sync_form_view
+#: view:tapoit_worktrail.server.sync:tapoit_worktrail.tapoit_worktrail_sync_tree_view
+msgid "Worktrail Sync History"
+msgstr "Worktrail Sync History"
+
+#. module: tapoit_worktrail
+#: model:ir.actions.act_window,name:tapoit_worktrail.action_tapoit_worktrail_resource
+#: model:ir.ui.menu,name:tapoit_worktrail.menu_tapoit_worktrail_resource
+msgid "Worktrail Sync Mapping"
+msgstr "Worktrail Sync Mapping"
+
+#. module: tapoit_worktrail
+#: model:ir.model,name:tapoit_worktrail.model_tapoit_worktrail_server_task_type
+msgid "Worktrail Task Types"
+msgstr "Worktrail Task Types"
+
+#. module: tapoit_worktrail
+#: code:addons\tapoit_worktrail\wizard\tapoit_worktrail_sync_execution.py:1449
+#, python-format
+msgid "You can not modify an entry in a confirmed timesheet !"
+msgstr "You can not modify an entry in a confirmed timesheet !"
+
+#. module: tapoit_worktrail
+#: code:addons\tapoit_worktrail\wizard\tapoit_worktrail_sync_execution.py:1474
+#, python-format
+msgid "You can not modify an invoiced analytic line!"
+msgstr "You can not modify an invoiced analytic line!"
+
+#. module: tapoit_worktrail
+#: constraint:hr.analytic.timesheet:0
+msgid "You cannot modify an entry in a Confirmed/Done timesheet !."
+msgstr "You cannot modify an entry in a Confirmed/Done timesheet !."
+

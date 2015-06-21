@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record id="tapoit_worktrail_sync_now_form_view" model="ir.ui.view">
+            <field name="name">tapoit_worktrail_sync_now.form</field>
+            <field name="model">tapoit_worktrail.sync.execution</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Worktrail Sync" version="7.0">
+                    <header>
+                        <button special="cancel" string="Abbrechen" type="object" icon="gtk-cancel" />
+                        <button name="sync_start" string="Sync ausführen" type="object" icon="gtk-execute" />
+                    </header>
+                </form>
+            </field>
+        </record>
+        <record id="action_tapoit_worktrail_sync_now" model="ir.actions.act_window">
+            <field name="name">Worktrail Sync</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">tapoit_worktrail.sync.execution</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="tapoit_worktrail_sync_now_form_view" />
+            <field name="target">new</field>
+        </record>
+        <record id="ir_cron_worktrail_sync" model="ir.cron">
+            <field name="model">tapoit_worktrail.sync.execution</field>
+            <field name="name">WorkTrail Sync - Cronjob</field>
+            <field name="function">sync_start</field>
+            <field eval="-1" name="numbercall"/>
+            <field name="args">(None, )</field>
+            <field name="interval_type">hours</field>
+            <field eval="8" name="interval_number"/>
+            <field eval="1" name="doall"/>
+            <field eval="1" name="active"/>
+        </record>
+        <menuitem
+            name="Worktrail Sync Execution"
+            sequence="30"
+            parent="menu_worktrail"
+            action="action_tapoit_worktrail_sync_now"
+            id="menu_tapoit_worktrail_sync_now" />
+    </data>
+</openerp>

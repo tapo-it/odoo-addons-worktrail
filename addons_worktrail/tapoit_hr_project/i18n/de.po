@@ -1,0 +1,488 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* tapoit_hr_project
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-04-25 06:42+0000\n"
+"PO-Revision-Date: 2014-04-25 06:42+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: tapoit_hr_project
+#: field:hr.sign.in.task.work,action_desc:0
+#: field:hr.sign.out.task.work,action_desc:0
+msgid "Action description"
+msgstr "Aktionsbegründung"
+
+#. module: tapoit_hr_project
+#: model:ir.actions.act_window,name:tapoit_hr_project.action_hr_project_move_work
+#: model:ir.ui.menu,name:tapoit_hr_project.menu_hr_project_move_work
+msgid "Assign booked task works to another task"
+msgstr "Assign booked task works to another task"
+
+#. module: tapoit_hr_project
+#. openerp-web
+#: code:addons/tapoit_hr_project/static/src/js/attendance.js:34
+#, python-format
+msgid "Last sign in: %s,<br />%s.<br />Click to sign out."
+msgstr "Letzte Anmeldung: %s,<br />%s.<br />Klicken Sie hier, um sich abzumelden."
+
+#. module: tapoit_hr_project
+#: model:ir.actions.server,name:tapoit_hr_project.action_hr_project_sign_in
+#: model:ir.ui.menu,name:tapoit_hr_project.menu_hr_project_sign_in
+msgid "Sign in / Sign out by Task Work"
+msgstr "An/Abmeldung mit Projektaufgabe"
+
+#. module: tapoit_hr_project
+#: code:addons/tapoit_hr_project/model/hr_attendance.py:191
+#, python-format
+msgid "Dependency Error!"
+msgstr "Abhängigkeitsfehler!"
+
+#. module: tapoit_hr_project
+#: model:ir.model,name:tapoit_hr_project.model_project_task_work
+#: view:project.task.work:0
+msgid "Project Task Work"
+msgstr "Erledigte Aufgaben"
+
+#. module: tapoit_hr_project
+#: code:addons/tapoit_hr_project/wizard/tapoit_hr_project_sign_in_out.py:148
+#, python-format
+msgid "No employee defined for your user !"
+msgstr "Es ist kein Mitarbeiter für diesen User definiert!"
+
+#. module: tapoit_hr_project
+#: code:addons/tapoit_hr_project/model/hr_employee.py:87
+#, python-format
+msgid "You tried to %s with a date anterior to another event !\n"
+"Try to contact the administrator to correct attendances."
+msgstr "You tried to %s with a date anterior to another event !\n"
+"Try to contact the administrator to correct attendances."
+
+#. module: tapoit_hr_project
+#: view:project.task.work:0
+msgid "Group By..."
+msgstr "Gruppieren mit..."
+
+#. module: tapoit_hr_project
+#: model:ir.model,name:tapoit_hr_project.model_hr_attendance
+msgid "Attendance"
+msgstr "Anwesenheitszeit"
+
+#. module: tapoit_hr_project
+#: model:ir.model,name:tapoit_hr_project.model_hr_move_task_work
+msgid "Move project task work"
+msgstr "Arbeitseintrag verschieben"
+
+#. module: tapoit_hr_project
+#: field:hr.sign.in.task.work,server_date:0
+#: field:hr.sign.out.task.work,server_date:0
+msgid "Current Date"
+msgstr "Aktueller Zeitstempel"
+
+#. module: tapoit_hr_project
+#: field:hr.sign.out.task.work,start_attendance:0
+#: field:project.task.work,start_attendance:0
+msgid "Related Start Attendance ID"
+msgstr "Zugehörige Anwesenheitsbeginn ID"
+
+#. module: tapoit_hr_project
+#: model:ir.model,name:tapoit_hr_project.model_hr_employee
+msgid "Employee"
+msgstr "Mitarbeiter"
+
+#. module: tapoit_hr_project
+#: model:ir.model,name:tapoit_hr_project.model_hr_sign_out_task_work
+msgid "Sign Out By Task Work"
+msgstr "Abmelden über eine Aufgabe und Projekt"
+
+#. module: tapoit_hr_project
+#: view:project.task.work:0
+msgid "Month"
+msgstr "Monat"
+
+#. module: tapoit_hr_project
+#: view:tapoit.hr.project.workcontext:0
+msgid "TaPo-IT Workcontext"
+msgstr "TaPo-IT Workcontext"
+
+#. module: tapoit_hr_project
+#: view:hr.sign.in.task.work:0
+msgid "End Break"
+msgstr "Pause beenden"
+
+#. module: tapoit_hr_project
+#: field:tapoit.hr.project.workcontext,action_reason:0
+msgid "Related Action Reasons"
+msgstr "Verknüpfte Begründungen"
+
+#. module: tapoit_hr_project
+#: view:hr.move.task.work:0
+#: view:project.task.work:0
+msgid "Stundenleistung"
+msgstr "Stundenleistung"
+
+#. module: tapoit_hr_project
+#: code:addons/tapoit_hr_project/model/hr_attendance.py:52
+#: code:addons/tapoit_hr_project/model/hr_attendance.py:154
+#, python-format
+msgid "Error !"
+msgstr "Fehler !"
+
+#. module: tapoit_hr_project
+#: view:hr.sign.out.task.work:0
+msgid "Stop Working"
+msgstr "Arbeit und Anwesenheit beeenden"
+
+#. module: tapoit_hr_project
+#: field:hr.sign.in.task.work,workcontext:0
+#: field:hr.sign.out.task.work,workcontext:0
+#: model:ir.actions.act_window,name:tapoit_hr_project.action_hr_project_workcontext
+#: model:ir.model,name:tapoit_hr_project.model_tapoit_hr_project_workcontext
+#: model:ir.ui.menu,name:tapoit_hr_project.menu_hr_project_workcontext
+msgid "Work Context"
+msgstr "Work Context"
+
+#. module: tapoit_hr_project
+#: view:hr.move.task.work:0
+#: view:project.task.work:0
+msgid "Task Work"
+msgstr "Erledigte Aufgaben"
+
+#. module: tapoit_hr_project
+#: code:addons/tapoit_hr_project/model/project_task_work.py:727
+#, python-format
+msgid "This work (%s) conflicts with another work (%s) or attendance entry."
+msgstr "Diese Arbeit (%s) steht im Konflikt mit einer anderen Arbeit (%s) oder einem Zeitstempel."
+
+#. module: tapoit_hr_project
+#: field:tapoit.hr.project.workcontext,company:0
+msgid "Company"
+msgstr "Unternehmen"
+
+#. module: tapoit_hr_project
+#: model:ir.model,name:tapoit_hr_project.model_hr_timesheet_sheet_sheet
+msgid "Timesheet"
+msgstr "Zeiterfassung"
+
+#. module: tapoit_hr_project
+#: code:addons/tapoit_hr_project/model/hr_employee.py:103
+#, python-format
+msgid "Sign Out"
+msgstr "Abmelden"
+
+#. module: tapoit_hr_project
+#: field:hr.action.reason,pause:0
+#: field:hr.attendance,pause:0
+#: field:hr.sign.in.task.work,pause:0
+#: view:hr.sign.out.task.work:0
+#: field:hr.sign.out.task.work,pause:0
+msgid "Break"
+msgstr "Pause - Beginn"
+
+#. module: tapoit_hr_project
+#: model:ir.model,name:tapoit_hr_project.model_hr_sign_in_task_work
+msgid "Sign In By Task Work"
+msgstr "Anmelden mit einer Aufgabe und Projekt"
+
+#. module: tapoit_hr_project
+#: field:hr.sign.out.task.work,task_id:0
+#: view:project.task.work:0
+msgid "Task"
+msgstr "Aufgabe"
+
+#. module: tapoit_hr_project
+#: code:addons/tapoit_hr_project/model/hr_employee.py:87
+#: code:addons/tapoit_hr_project/model/hr_employee.py:110
+#, python-format
+msgid "Warning"
+msgstr "Warnung"
+
+#. module: tapoit_hr_project
+#: constraint:hr.attendance:0
+msgid "Error: Sign in (resp. Sign out) must follow Sign out (resp. Sign in)"
+msgstr "Fehler: Anmeldung (bzw. Abmeldung) muss auf eine Abmeldung (bzw. Anmeldung) folgen"
+
+#. module: tapoit_hr_project
+#: view:project.task.work:0
+msgid "User"
+msgstr "User"
+
+#. module: tapoit_hr_project
+#: code:addons/tapoit_hr_project/wizard/tapoit_hr_project_sign_in_out.py:150
+#, python-format
+msgid "More than one employee defined for this user! Please correct this issue!"
+msgstr "Es ist mehr als ein Mitarbeiter mit diesem Benutzer verknüpft! Bitte korrigieren Sie das!"
+
+#. module: tapoit_hr_project
+#: view:hr.sign.in.task.work:0
+msgid "Sign in"
+msgstr "Anmelden"
+
+#. module: tapoit_hr_project
+#: field:tapoit.hr.project.workcontext,status:0
+msgid "Active"
+msgstr "Aktiv"
+
+#. module: tapoit_hr_project
+#: view:hr.sign.in.task.work:0
+#: view:hr.sign.out.task.work:0
+msgid "Sign In/Out By Task Work"
+msgstr "Anmelden / Abmelden über Aufgabe und Projekt"
+
+#. module: tapoit_hr_project
+#: view:project.task.work:0
+#: field:project.task.work,day:0
+msgid "Day"
+msgstr "Tag"
+
+#. module: tapoit_hr_project
+#: help:hr.sign.in.task.work,date:0
+#: help:hr.sign.out.task.work,date:0
+msgid "Keep empty for current time"
+msgstr "Leer lassen für den aktuellen Zeitstempel"
+
+#. module: tapoit_hr_project
+#: field:hr.sign.out.task.work,date:0
+msgid "Closing Date"
+msgstr "Ende"
+
+#. module: tapoit_hr_project
+#: help:hr.sign.in.task.work,server_date:0
+#: help:hr.sign.out.task.work,server_date:0
+msgid "Local time on the server side"
+msgstr "Lokale Serverzeit"
+
+#. module: tapoit_hr_project
+#: code:addons/tapoit_hr_project/model/hr_attendance.py:57
+#: code:addons/tapoit_hr_project/wizard/tapoit_hr_project_sign_in_out.py:148
+#: code:addons/tapoit_hr_project/wizard/tapoit_hr_project_sign_in_out.py:150
+#, python-format
+msgid "UserError"
+msgstr "Benutzerfehler"
+
+#. module: tapoit_hr_project
+#: model:ir.model,name:tapoit_hr_project.model_hr_action_reason
+msgid "Action Reason"
+msgstr "Aktionsbegründung"
+
+#. module: tapoit_hr_project
+#: field:tapoit.hr.project.workcontext,sequence:0
+msgid "Sort Order"
+msgstr "Sortierung"
+
+#. module: tapoit_hr_project
+#: view:project.task.work:0
+msgid "My work"
+msgstr "Meine Arbeit"
+
+#. module: tapoit_hr_project
+#: field:tapoit.hr.project.workcontext,keyword:0
+msgid "Keyword"
+msgstr "Schlüsselwort"
+
+#. module: tapoit_hr_project
+#: code:addons/tapoit_hr_project/model/hr_attendance.py:57
+#, python-format
+msgid "You cannot enter an attendance date outside the current timesheet dates!"
+msgstr "Sie können keine Anwesenheit außerhalb des offenen Zeitkontos eingeben!"
+
+#. module: tapoit_hr_project
+#: field:project.task.work,project_id:0
+msgid "Projekt"
+msgstr "Projekt"
+
+#. module: tapoit_hr_project
+#: view:hr.sign.in.task.work:0
+msgid "Sign in / Sign out"
+msgstr "Anmelden / Abmelden"
+
+#. module: tapoit_hr_project
+#: view:hr.sign.out.task.work:0
+msgid "Work done in the last period"
+msgstr "Aufgabe bzw. Arbeit, die gerade beendet wurde"
+
+#. module: tapoit_hr_project
+#: view:project.task.work:0
+#: field:project.task.work,year:0
+msgid "Year"
+msgstr "Jahr"
+
+#. module: tapoit_hr_project
+#: field:hr.sign.in.task.work,state:0
+#: field:hr.sign.out.task.work,state:0
+msgid "Current state"
+msgstr "Anwesenheitsstatus"
+
+#. module: tapoit_hr_project
+#: field:hr.sign.in.task.work,name:0
+#: field:hr.sign.out.task.work,name:0
+msgid "Employees name"
+msgstr "Mitarbeitername"
+
+#. module: tapoit_hr_project
+#: field:hr.move.task.work,target_task_id:0
+msgid "Target Task"
+msgstr "Neue Aufgabenzuordnung"
+
+#. module: tapoit_hr_project
+#: view:project.task.work:0
+msgid "Filter"
+msgstr "Filter"
+
+#. module: tapoit_hr_project
+#: field:hr.sign.in.task.work,date:0
+#: field:hr.sign.out.task.work,date_start:0
+msgid "Starting Date"
+msgstr "Beginn"
+
+#. module: tapoit_hr_project
+#: code:addons/tapoit_hr_project/model/hr_employee.py:110
+#, python-format
+msgid "You tried to %s with a date anterior to another event !\n"
+"Try to contact the HR Manager to correct attendances."
+msgstr "You tried to %s with a date anterior to another event !\n"
+"Try to contact the HR Manager to correct attendances."
+
+#. module: tapoit_hr_project
+#: view:hr.sign.in.task.work:0
+msgid "Combination of Attendance, Analytic Timesheet and Project Task Work"
+msgstr "Kombination aus Anwesenheit, Zeiterfassung und Projektaufgabe bzw. Arbeit"
+
+#. module: tapoit_hr_project
+#: view:project.task:0
+msgid "Spent Hours"
+msgstr "Geleistete Stunden"
+
+#. module: tapoit_hr_project
+#: code:addons/tapoit_hr_project/model/hr_employee.py:103
+#, python-format
+msgid "Sign In"
+msgstr "Anmelden"
+
+#. module: tapoit_hr_project
+#: field:hr.sign.in.task.work,emp_id:0
+#: field:hr.sign.out.task.work,emp_id:0
+msgid "Employee ID"
+msgstr "Mitarbeiter ID"
+
+#. module: tapoit_hr_project
+#: view:hr.move.task.work:0
+msgid "Task Work Selection"
+msgstr "Arbeitseinträge auswählen"
+
+#. module: tapoit_hr_project
+#: code:addons/tapoit_hr_project/model/hr_attendance.py:52
+#: code:addons/tapoit_hr_project/model/hr_attendance.py:154
+#, python-format
+msgid "You cannot modify an entry in a confirmed timesheet !"
+msgstr "You cannot modify an entry in a confirmed timesheet !"
+
+#. module: tapoit_hr_project
+#: code:addons/tapoit_hr_project/model/project_task_work.py:707
+#, python-format
+msgid "This work (%s) conflicts with another work or attendance entry (%s)."
+msgstr "This work (%s) conflicts with another work or attendance entry (%s)."
+
+#. module: tapoit_hr_project
+#: view:project.task.work:0
+msgid "Project"
+msgstr "Projekt"
+
+#. module: tapoit_hr_project
+#: view:project.task.work:0
+msgid "Arbeitsbeschreibung"
+msgstr "Arbeitsbeschreibung"
+
+#. module: tapoit_hr_project
+#: field:project.task.work,project_ids:0
+msgid "Übergeordnete Projekte"
+msgstr "Übergeordnete Projekte"
+
+#. module: tapoit_hr_project
+#: field:project.task.work,workcontext:0
+msgid "Related Work Context ID"
+msgstr "Related Work Context ID"
+
+#. module: tapoit_hr_project
+#: view:hr.sign.in.task.work:0
+msgid "Start Working"
+msgstr "Arbeit beginnen"
+
+#. module: tapoit_hr_project
+#: view:hr.move.task.work:0
+msgid "Move"
+msgstr "Verschieben"
+
+#. module: tapoit_hr_project
+#: code:addons/tapoit_hr_project/model/hr_attendance.py:191
+#, python-format
+msgid "You can not %s the attendance %s because it is linked to this/these task work entry/entries (%s)!%s"
+msgstr "You can not %s the attendance %s because it is linked to this/these task work entry/entries (%s)!%s"
+
+#. module: tapoit_hr_project
+#. openerp-web
+#: code:addons/tapoit_hr_project/static/src/js/attendance.js:36
+#, python-format
+msgid "Click to Sign In at %s."
+msgstr "Click to Sign In at %s."
+
+#. module: tapoit_hr_project
+#: view:hr.sign.out.task.work:0
+msgid "General Information"
+msgstr "Allgemeine Informationen"
+
+#. module: tapoit_hr_project
+#: field:hr.sign.out.task.work,end_attendance:0
+#: field:project.task.work,end_attendance:0
+msgid "Related End Attendance ID"
+msgstr "Zugehörige Anwesenheitsende ID"
+
+#. module: tapoit_hr_project
+#: field:hr.move.task.work,work_ids:0
+#: model:ir.actions.act_window,name:tapoit_hr_project.action_hr_project_task_work
+#: model:ir.ui.menu,name:tapoit_hr_project.menu_hr_project_task_work
+msgid "Works"
+msgstr "Arbeitseinträge"
+
+#. module: tapoit_hr_project
+#: view:hr.move.task.work:0
+msgid "Please choose task works which should be moved to another task"
+msgstr "Bitte wählen sie die Arbeiten, die einer neuen Aufgabe zugeordnet werden sollen"
+
+#. module: tapoit_hr_project
+#: view:hr.move.task.work:0
+#: view:hr.sign.in.task.work:0
+#: view:hr.sign.out.task.work:0
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#. module: tapoit_hr_project
+#: field:hr.sign.out.task.work,info:0
+msgid "Work Description"
+msgstr "Arbeitsbeschreibung"
+
+#. module: tapoit_hr_project
+#: field:tapoit.hr.project.workcontext,name:0
+msgid "Name"
+msgstr "Name"
+
+#. module: tapoit_hr_project
+#: code:addons/tapoit_hr_project/model/project_task_work.py:707
+#: code:addons/tapoit_hr_project/model/project_task_work.py:727
+#, python-format
+msgid "Task Work Conflict - Attendance Timestamp"
+msgstr "Task Work Conflict - Attendance Timestamp"
+
+#. module: tapoit_hr_project
+#: view:hr.sign.out.task.work:0
+msgid "Change Work"
+msgstr "Arbeit wechseln"
+

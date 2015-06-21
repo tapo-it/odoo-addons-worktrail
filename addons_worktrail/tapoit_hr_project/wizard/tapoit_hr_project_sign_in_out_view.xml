@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_hr_project_sign_in_message" model="ir.ui.view">
+            <field name="name">hr.sign.in.task.work.message.form</field>
+            <field name="model">hr.sign.in.task.work</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Sign In/Out By Task Work">
+                    <separator colspan="4" string="Sign In/Out By Task Work"/>
+                    <label colspan="4" nolabel="1" string="Combination of Attendance, Analytic Timesheet and Project Task Work"/>
+                    <newline/>
+                    <group colspan="4" col="6">
+                        <button icon="gtk-cancel" special="cancel" string="Cancel"/>
+                        <button icon="gtk-ok" string="Sign in / Sign out" name="check_state" type="object"/>
+                   </group>
+               </form>
+            </field>
+        </record>
+
+        <record id="view_hr_project_sign_in" model="ir.ui.view">
+            <field name="name">hr.sign.in.task.work.form</field>
+            <field name="model">hr.sign.in.task.work</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Sign In/Out By Task Work">
+                    <group colspan="4" >
+                        <separator string="Sign in" colspan="4"/>
+                        <field name="name" readonly="True" />
+                        <field name="state" readonly="True" />
+                        <field name="pause" invisible="True" />
+                        <field name="server_date"/>
+                        <field name="date"/>
+                        <field name="workcontext" select="1" colspan="2" attrs="{'required': [('action_desc','=',False)] }" />
+                        <field name="action_desc" select="1" colspan="2" attrs="{'invisible':[('workcontext','!=',False)], 'required': [('workcontext','=',False)]}" />
+                    </group>
+                    <group colspan="2" col="6">
+                        <button icon="gtk-cancel" special="cancel" string="Cancel"/>
+                        <button icon="gtk-ok" string="End Break" name="sign_in_break" type="object" attrs="{ 'invisible':[('pause','=',False)] }" />
+                        <button icon="gtk-ok" string="Start Working" name="sign_in_result" type="object" attrs="{ 'invisible':[('pause','=',True)] }" />
+                   </group>
+               </form>
+            </field>
+        </record>
+
+        <record id="action_hr_project_sign_in" model="ir.actions.server"> 
+            <field name="name">Sign in / Sign out by Task Work</field>
+            <field name="type">ir.actions.server</field>
+            <field name="state">code</field>
+            <field name="code"><![CDATA[
+# You can use the following variables:
+#  - self: ORM model of the record on which the action is triggered
+#  - object: browse_record of the record on which the action is triggered if there is one, otherwise None
+#  - pool: ORM model pool (i.e. self.pool)
+#  - time: Python time module
+#  - cr: database cursor
+#  - uid: current user id
+#  - context: current context
+# If you plan to return an action, assign: action = {...}
+
+field_list = self.create(cr, uid, {}, context=context)
+action = self.check_state(cr, uid, [ field_list ] , context=context)]]></field>
+            <field name="condition">True</field>
+            <field name="model_id" model="ir.model" search="[('model', '=', u'hr.sign.in.task.work')]" />
+        </record>
+        <record id="menu_hr_project_sign_in" model="ir.ui.menu">
+            <field name="name">Sign in / Sign out by Task Work</field>
+            <field eval="15" name="sequence"/>
+            <field name="parent_id" ref="hr_attendance.menu_hr_attendance"/>
+            <field name="icon">STOCK_JUSTIFY_FILL</field>
+            <field name="action" ref="action_hr_project_sign_in"/>
+        </record>
+        <record id="view_hr_project_sign_out" model="ir.ui.view">
+            <field name="name">hr.sign.out.task.work.form</field>
+            <field name="model">hr.sign.out.task.work</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Sign In/Out By Task Work">
+                    <group colspan="4" >
+                        <separator string="General Information" colspan="4" />
+                        <field name="name" readonly="True" />
+                        <field name="state" readonly="True" />
+                        <field name="date_start"/>
+                        <field name="server_date"/>
+                        <field name="workcontext" select="1" colspan="2" attrs="{'required': [('action_desc','=',False)] }" />
+                        <field name="action_desc" select="1" colspan="2" attrs="{'invisible':[('workcontext','!=',False)], 'required': [('workcontext','=',False)]}" />
+                        <separator string="Work done in the last period" colspan="4" />
+                        <field name="task_id" select="1" colspan="2" />
+                        <field name="info" colspan="2"/>
+                        <field name="date"/>
+                    </group>
+                    <separator string="" colspan="4" />
+                    <group colspan="4" col="6">
+                        <button icon="gtk-cancel" special="cancel" string="Cancel"/>
+                        <button icon="gtk-ok" string="Change Work" name="sign_out_result" type="object"/>
+                        <button icon="gtk-ok" string="Break" name="sign_out_break" type="object"/>
+                        <button icon="gtk-ok" string="Stop Working" name="sign_out_result_end" type="object"/>
+                   </group>
+               </form>
+            </field>
+        </record>
+        
+        <!-- record id="action_hr_project_sign_out" model="ir.actions.act_window">
+            <field name="name">Sign in / Sign out by Task Work</field>
+            <field name="res_model">hr.sign.out.task.work</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+           <field name="view_id" ref="view_hr_project_sign_out"/>
+           <field name="target">new</field>
+        </record-->
+
+    </data>
+</openerp>

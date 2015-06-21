@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_hr_project_work_selection" model="ir.ui.view">
+            <field name="name">hr.project.work.selection.form</field>
+            <field name="model">hr.move.task.work</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Task Work Selection" version="7.0">
+                    <label colspan="4" nolabel="1" string="Please choose task works which should be moved to another task"/>
+                    <field name="work_ids" mode="tree" context="{'search_view_ref': 'tapoit_hr_project.hr_project_task_work_search', 'tree_view_ref': 'tapoit_hr_project.hr_project_task_work_tree_view' }" widget="many2many">
+                        <tree editable="top" string="Task Work">
+                            <field name="date"></field>
+                            <field name="task_id"></field>
+                            <field name="name"></field>
+                            <field name="hours" widget="float_time" sum="Stundenleistung"></field>
+                            <field name="workcontext"> </field>
+                            <field name="user_id"></field>
+                            <field name="day" invisible="1"></field>
+                            <field name="year" invisible="1"></field>
+                        </tree>
+                    </field>
+                    <newline/>
+                    <group>
+                        <field id="target" name="target_task_id" />
+                    </group>
+                    <button icon="gtk-cancel" special="cancel" string="Cancel"/>
+                    <button icon="gtk-ok" string="Move" name="move_selection" type="object"/>
+               </form>
+            </field>
+        </record>
+        
+        <record id="action_hr_project_move_work" model="ir.actions.act_window">
+            <field name="name">Assign booked task works to another task</field>
+            <field name="res_model">hr.move.task.work</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_hr_project_work_selection"/>
+            <field name="target">new</field>
+        </record>
+        
+        <menuitem action="action_hr_project_move_work"
+                    id="menu_hr_project_move_work"
+                    parent="hr_attendance.menu_hr_attendance"
+                    sequence="20" />
+    </data>
+</openerp>

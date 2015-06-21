@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="tapoit_worktrail_server_task_type" model="ir.model.access">
+            <field name="name" eval="&quot;&quot;&quot;Worktrail Sync Configuration&quot;&quot;&quot;" />
+            <field name="model_id" ref="model_tapoit_worktrail_server_task_type" />
+            <field name="group_id" ref="base.group_system" />
+            <field name="perm_read" eval="1" />
+            <field name="perm_unlink" eval="1" />
+            <field name="perm_write" eval="1" />
+            <field name="perm_create" eval="1" />
+        </record>
+        <record id="tapoit_worktrail_config" model="ir.model.access">
+            <field name="name" eval="&quot;&quot;&quot;Worktrail Sync Configuration&quot;&quot;&quot;" />
+            <field name="model_id" ref="model_tapoit_worktrail_server_conf" />
+            <field name="group_id" ref="base.group_system" />
+            <field name="perm_read" eval="1" />
+            <field name="perm_unlink" eval="1" />
+            <field name="perm_write" eval="1" />
+            <field name="perm_create" eval="1" />
+        </record>
+        <record id="tapoit_worktrail_sync" model="ir.model.access">
+            <field name="name" eval="&quot;&quot;&quot;Worktrail Sync&quot;&quot;&quot;" />
+            <field name="model_id" ref="model_tapoit_worktrail_server_sync" />
+            <field name="group_id" ref="base.group_system" />
+            <field name="perm_read" eval="1" />
+            <field name="perm_unlink" eval="1" />
+            <field name="perm_write" eval="1" />
+            <field name="perm_create" eval="1" />
+        </record>
+        <record id="tapoit_worktrail_resource" model="ir.model.access">
+            <field name="name" eval="&quot;&quot;&quot;Worktrail Sync Resource&quot;&quot;&quot;" />
+            <field name="model_id" ref="model_tapoit_worktrail_server_resource" />
+            <field name="group_id" ref="base.group_system" />
+            <field name="perm_read" eval="1" />
+            <field name="perm_unlink" eval="1" />
+            <field name="perm_write" eval="1" />
+            <field name="perm_create" eval="1" />
+        </record>
+    </data>
+</openerp>
