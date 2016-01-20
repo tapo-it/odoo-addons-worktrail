@@ -78,7 +78,7 @@ class tapoit_worktrail_config(orm.Model):
             values['request_key'] = vals.get('request_key', config.request_key)
             if values['request_key']:
                 response = self.test_auth_token(cr, uid, values)
-                if 'status' in response:
+                if response and 'status' in response:
                     vals['access_granted'] = response['status']
 
                 # header['X-AUTHTOKEN']

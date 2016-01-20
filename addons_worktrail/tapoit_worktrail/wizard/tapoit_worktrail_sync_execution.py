@@ -135,21 +135,21 @@ class tapoit_worktrail_sync_execution(orm.TransientModel):
         return response
 
     def get_all_json_results(self, cr, uid, url, data, params):
-        list = []
+        result_list = []
         response = self.json_request(cr, uid, url, data)
         if response and 'num_pages' in response:
             count = response['num_pages']
             for y in range(0, count):
                 ext_params = ''
                 for item in response['list']:
-                    list.append(item)
+                    result_list.append(item)
                 if count > 1 and count > (y + 1):
                     ext_params = '&page=%s' % (y + 2)
                     n_url = "%s%s" % (url, ext_params)
                     response = self.json_request(cr, uid, n_url, data)
 
         if response:
-            return list
+            return result_list
         else:
             return False
 
@@ -1162,9 +1162,10 @@ class tapoit_worktrail_sync_execution(orm.TransientModel):
                 params = '?after=%s' % self.convertDatetime2Timestamp(cr, uid, self._get_last_sync(cr, uid, 'employee'))
                 url = "%s://%s:%s/rest/employees/%s" % (self.sync_vars['protocol'], self.sync_vars['host'], self.sync_vars['port'], params)
                 self.event_log('info', 'Loading Worktrail Users - URL: %s' % url)
-                list = self.get_all_json_results(cr, uid, url, data, params)
-                if list:
-                    for user in list:
+                userlist = self.get_all_json_results(cr, uid, url, data, params)
+                _logger.info('User List %s', userlist)
+                if userlist:
+                    for user in userlist:
                         self.event_log('debug', 'Loading Worktrail User (%s)' % (user['id']))
                         res_obj = self.getResourceFromExternalID(cr, uid, user['id'], 'employee')
                         # CREATE USER LINK
@@ -1182,7 +1183,7 @@ class tapoit_worktrail_sync_execution(orm.TransientModel):
                                     self.event_log('info', 'Sync Incoming')
                                 if syncflow['outgoing']:
                                     self.event_log('info', 'Sync Outgoing')
-                elif not isinstance(list, list):
+                elif not isinstance(userlist, list):
                     self.log = ''
                     self.state = ''
                     self.sync_vars = []
@@ -1194,9 +1195,9 @@ class tapoit_worktrail_sync_execution(orm.TransientModel):
                 params = '?after=%s' % self.convertDatetime2Timestamp(cr, uid, self._get_last_sync(cr, uid, 'workcontext'))
                 url = "%s://%s:%s/rest/workcontext/%s" % (self.sync_vars['protocol'], self.sync_vars['host'], self.sync_vars['port'], params)
                 self.event_log('info', 'Loading Worktrail Work Context - URL: %s' % url)
-                list = self.get_all_json_results(cr, uid, url, data, params)
-                if list:
-                    for workcontext in list:
+                workcontext_list = self.get_all_json_results(cr, uid, url, data, params)
+                if workcontext_list:
+                    for workcontext in workcontext_list:
                         res_obj = self.getResourceFromExternalID(cr, uid, workcontext['id'], 'workcontext')
                         if not res_obj:
                             external_work = workcontext['id']
@@ -1259,8 +1260,8 @@ class tapoit_worktrail_sync_execution(orm.TransientModel):
                         params = '?after=%s' % self.convertDatetime2Timestamp(cr, uid, self._get_last_sync(cr, uid, 'project'))
                         url = "%s://%s:%s/rest/projects/%s" % (self.sync_vars['protocol'], self.sync_vars['host'], self.sync_vars['port'], params)
                         self.event_log('info', 'Loading Worktrail Projects - URL: %s' % url)
-                        list = self.get_all_json_results(cr, uid, url, data, params)
-                        for project in list:
+                        project_list = self.get_all_json_results(cr, uid, url, data, params)
+                        for project in project_list:
                             self.event_log('debug', 'Getting Worktrail Projects (%s)' % project['id'])
                             local_object = self.getResourceFromExternalID(cr, uid, project['id'], 'project')
                             # CREATE LOCAL PROJECT
@@ -1275,8 +1276,8 @@ class tapoit_worktrail_sync_execution(orm.TransientModel):
                         params = '?after=%s' % self.convertDatetime2Timestamp(cr, uid, self._get_last_sync(cr, uid, 'task'))
                         url = "%s://%s:%s/rest/tasks/%s" % (self.sync_vars['protocol'], self.sync_vars['host'], self.sync_vars['port'], params)
                         self.event_log('info', 'Loading Worktrail Tasks - URL: %s' % url)
-                        list = self.get_all_json_results(cr, uid, url, data, params)
-                        for task in list:
+                        task_list = self.get_all_json_results(cr, uid, url, data, params)
+                        for task in task_list:
                             self.event_log('debug', 'Getting Worktrail Tasks (%s)' % task['id'])
                             local_object = self.getResourceFromExternalID(cr, uid, task['id'], 'task')
                             # CREATE LOCAL TASK
@@ -1291,10 +1292,10 @@ class tapoit_worktrail_sync_execution(orm.TransientModel):
                         params = '?after=%s' % self.convertDatetime2Timestamp(cr, uid, self._get_last_sync(cr, uid, 'work'))
                         url = "%s://%s:%s/rest/workentries/%s" % (self.sync_vars['protocol'], self.sync_vars['host'], self.sync_vars['port'], params)
                         self.event_log('info', 'Loading Worktrail Task Works - URL: %s' % url)
-                        list = self.get_all_json_results(cr, uid, url, data, params)
-                        if list:
+                        task_work_list = self.get_all_json_results(cr, uid, url, data, params)
+                        if task_work_list:
                             # I need the incoming works ordered by datetime otherwise we have big troubles
-                            for work in list:
+                            for work in task_work_list:
                                 self.event_log('debug', 'Getting Worktrail Task Works (%s)' % work['id'])
                                 # Only get workentries for users in sync
                                 if work['employee'] in external_user_ids:
